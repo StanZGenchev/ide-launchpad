@@ -15,10 +15,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title dg-brand-title></title>
 		<link rel="icon" href="data:;base64,iVBORw0KGgo=" dg-brand-icon />
-		<script type="text/javascript" src="/services/web/ide-launchpad/services/perspective.js"></script>
+		<script type="text/javascript" src="/services/web/ide-launchpad/services/launchpad.js"></script>
 		<theme></theme>
-		<script type="text/javascript" src="/services/js/resources-core/services/loader.js?id=ide-perspective-js"></script>
-		<link type="text/css" rel="stylesheet" href="/services/js/resources-core/services/loader.js?id=ide-perspective-css" />
+		<script type="text/javascript" src="/services/js/resources-core/services/loader.js?id=ide-perspective-js">
+		</script>
+		<link type="text/css" rel="stylesheet"
+			href="/services/js/resources-core/services/loader.js?id=ide-perspective-css" />
 		<script type="text/javascript" src="js/launchpad.js"></script>
 
 	</head>
@@ -27,7 +29,16 @@
 		<ide-header menu-ext-id="ide-launchpad-menu"></ide-header>
 		<ide-contextmenu></ide-contextmenu>
 		<ide-container>
-		  <!-- <view id="launchpad"></view> -->
+			<fd-scrollbar class="dg-vbox dg-fill-parent">
+				<div class="fd-padding">
+					<h2 fd-title header-size="2">Launchpad title</h2>
+					<p class="fd-text">Launchpad description</p>
+				</div>
+				<embedded-view view-id="{{subview}}" dg-type="subview"
+					ng-repeat="subview in subviewList track by $index" ng-class="{'dg-border-top':$first}"
+					class="dg-full-width dg-border-bottom" style="max-height:15.75rem">
+				</embedded-view>
+			</fd-scrollbar>
 		</ide-container>
 
 		<ide-dialogs></ide-dialogs>

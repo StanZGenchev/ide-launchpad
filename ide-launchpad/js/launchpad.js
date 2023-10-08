@@ -10,5 +10,15 @@
  * SPDX-License-Identifier: EPL-2.0
  */
 const launchpad = angular.module("launchpad", ["ngResource", "ideLayout", "ideUI"]);
-launchpad.controller("LaunchpadViewController", ["$scope", function ($scope) {
+launchpad.controller("LaunchpadViewController", ["$scope", "Subviews", function ($scope, Subviews) {
+    $scope.subviewList = ['example-subview'];
+    // Subviews.getIdList().then(
+    //     function (list) {
+    //         $scope.$apply(function () {
+    //             $scope.subviewList = list;
+    //         });
+    //     },
+    //     function (error) {
+    //         console.error(error);
+    //     });
 }]);
