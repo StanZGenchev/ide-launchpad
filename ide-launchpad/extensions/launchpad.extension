@@ -1,0 +1,5 @@
+{
+    "module": "ide-launchpad/services/launchpad.js",
+    "extensionPoint": "ide-perspective",
+    "description": "Launchpad perspective"
+}
